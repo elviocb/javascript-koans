@@ -41,7 +41,9 @@ describe("About Applying What We Have Learnt", function() {
 
       /* solve using filter() & all() / any() */
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+      productsICanEat = _(products).filter(function(x){return x["containsNuts"] === false && _(x.ingredients).all(function(y){ return y !== "mushrooms" })});
+
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
